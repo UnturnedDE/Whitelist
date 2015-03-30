@@ -12,9 +12,10 @@ using Rocket.Logging;
 
 namespace Whitelist
 {
-    public class Class1 : RocketPlugin
+    public class Whitelist : RocketPlugin
     {
-        WebClient webClient = new WebClient();
+        public WebClient webClient;
+        public static Dictionary<string, string> Players = new Dictionary<string, string>();
 
         protected override void Load()
         {
@@ -23,14 +24,21 @@ namespace Whitelist
 
         void Events_OnPlayerConnected(Player player)
         {
-            WebClient webClient = new WebClient();
-            // dd
-
             SteamPlayerID steamId = player.SteamChannel.SteamPlayer.SteamPlayerID;
             string check = webClient.DownloadString("http://unturned.de/steam.php?steamId=" + steamId.CSteamID.ToString());
             if (check != "true")
             {
-                Steam.kick(steamId.CSteamID, "Bitte registriere dich auf www.unturned.de");
+                Steam.kick(steamId.CSteamID, Translate("not_registered"));
+            }
+        }
+
+        public override System.Collections.Generic.Dictionary<string, string> DefaultTranslations
+        {
+            get
+            {
+                return new System.Collections.Generic.Dictionary<string, string>() {
+                    {"not_registered", "Bitte registriere dich auf Unturned.de, um dem Server joinen zu können."},
+                };
             }
         }
     }
