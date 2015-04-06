@@ -15,8 +15,12 @@ namespace Whitelist
 {
     public class Whitelist : RocketPlugin
     {
+        public static Whitelist Instance;
+
         protected override void Load()
         {
+            Instance = this;
+
             RocketServerEvents.OnPlayerConnected += Events_OnPlayerConnected;
         }
 
