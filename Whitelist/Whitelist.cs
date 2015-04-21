@@ -15,24 +15,17 @@ namespace Whitelist
 {
     public class Whitelist : RocketPlugin
     {
-        public static Whitelist Instance;
-
         protected override void Load()
         {
-            Instance = this;
-
             RocketServerEvents.OnPlayerConnected += Events_OnPlayerConnected;
         }
 
         void Events_OnPlayerConnected(RocketPlayer player)
         {
             WebClient webClient = new WebClient();
-
-            CSteamID cSteamId = player.CSteamID;
-            string whitelisted = webClient.DownloadString("http://unturned.de/steam.php?steamId=" + cSteamId.ToString());
-            if (whitelisted != "true")
+            if (webClient.DownloadString("http://unturned.de/steam.php?steamId=" + player.CSteamID) == "false")
             {
-                player.Kick("Bitte registriere dich auf http://unturned.de/, um dem Server joinen zu können");
+                Steam.kick(player.CSteamID, "Bitte registriere dich auf http://unturned.de/, um dem Server joinen zu können");
             }
         }
     }

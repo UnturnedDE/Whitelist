@@ -32,15 +32,15 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\newestrocket\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\newestrocket\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="RocketAPI, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="RocketAPI, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\newestrocket\RocketAPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\RocketAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\newestrocket\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
